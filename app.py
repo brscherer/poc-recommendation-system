@@ -46,9 +46,9 @@ def compute_movie_views(ratings):
     views.rename(columns={'rating': 'views'}, inplace=True)
     return views
 
-###########################################
+############################################
 # Functions to Process Credits Information #
-###########################################
+############################################
 
 def load_credits():
     """Load credits data (cast and crew information)."""
@@ -98,9 +98,9 @@ def build_credit_matrix(movies):
     tfidf_matrix = tfidf.fit_transform(movies['combined_features'].fillna(''))
     return tfidf_matrix
 
-##########################################
-# Updated Content-Based Filtering Method #
-##########################################
+##################################
+# Content-Based Filtering Method #
+##################################
 
 def get_content_recommendations_by_credits(movie_title, movies, tfidf_matrix, views_df, top_n=10):
     """
@@ -134,9 +134,9 @@ def get_content_recommendations_by_credits(movie_title, movies, tfidf_matrix, vi
         recs.append({'movieName': movie_name, 'views': views_count, 'imdbScore': float(imdbScore)})
     return recs
 
-##########################################
-# Main Script with Updated Content Option #
-##########################################
+###############
+# Main Script #
+###############
 
 def main():
     print("Loading movies metadata...")
